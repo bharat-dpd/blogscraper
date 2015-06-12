@@ -1,0 +1,22 @@
+{
+  "name": "Blogscraper",
+  "version": "0.0.0",
+  "authors": [
+    "Bharat <bbbatra5@gmail.com>"
+  ],
+  "license": "Private",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.13",
+    "angularjs": "~1.3.5",
+    "angular-resource": "~1.3.6",
+    "bootstrap": "~3.3.4"
+  }
+}

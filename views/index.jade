@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  script(src="/bower_components/jquery/dist/jquery.min.js")
+  script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
+  script(src="/bower_components/angular/angular.min.js")
+  script(src="/bower_components/angular-ui-router/release/angular-ui-router.min.js")
+  script(src="/bower_components/angular-resource/angular-resource.min.js")
+  script(src="/javascripts/app.js")
+  #Main(ng-app="blogscraper" ui-view)
+    div(class="box wait-loader" wait-loader)
+      div.spinner
+       .bounce1
+       .bounce2
+       .bounce3

@@ -1,0 +1,18 @@
+<h1>Blogscraper</h1>
+
+
+<div class="row">
+  <div class="col-lg-12">
+  <span ng-if = "!searchUrl"style="color:red">Url Required</span>
+    <div class="input-group">
+      <input type="text" class="form-control" ng-model="searchUrl" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="processUrl()">Start!</button>
+      </span>
+    </div>
+  </div>
+  <div class="col-lg-12">
+  	<h3>{{data[0].title}}</h3>
+  	<p>{{data[0].text}}</p>
+  </div>
+</div>
