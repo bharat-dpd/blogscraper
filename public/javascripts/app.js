@@ -10,9 +10,12 @@ app.config(["$stateProvider", "$locationProvider", "$urlRouterProvider",
                 url: "/",
                 templateUrl: "/templates/home.html",
                 controller: ["$scope","Url",function($scope,Url) {
+                    $scope.options = {processStart :false};
                     $scope.processUrl = function(){
+                        $scope.options['processStart'] = true;
                         Url.fetchList().then(function(data){
                             $scope.data = data;
+                            $scope.options['processStart'] = false;
                         },function(err){
                             /*TODO handle Error*/
                             console.log(err);
