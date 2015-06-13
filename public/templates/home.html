@@ -7,13 +7,26 @@
     <div class="input-group">
       <input type="text" class="form-control" ng-model="searchUrl" placeholder="Search for...">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="processUrl()">Start!</button>
+        <button ng-disabled="!searchUrl" class="btn btn-default" type="button" ng-click="processUrl()">Start!</button>
       </span>
     </div>
   </div>
+  <h3 ng-if="data.length" >Blogscraper – result</h3>
   <div ng-if ="options.processStart" style="width: 100px;margin: 0 auto;height: 100px;"><img style="width:100%;" src="/images/loading.gif"></div>
-  <div class="col-lg-12">
-  	<h3>{{data[0].title}}</h3>
-  	<p>{{data[0].text}}</p>
+  <div ng-if="data.length" class="col-lg-12" ng-repeat="d in data">
+  	<form class="form-horizontal">
+  <div class="form-group">
+    <label for="title{{$index}}" class="col-sm-2 control-label">Title</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model = "d.title" class="form-control" id="title{{$index}}" placeholder="title">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="text{{$index}}" class="col-sm-2 control-label">Text</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" ng-model = "d.text" id="text{{$index}}"></textarea>
+    </div>
+  </div>
+</form>
   </div>
 </div>
